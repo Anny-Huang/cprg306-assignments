@@ -74,7 +74,7 @@ export default function ItemList() {
   };
 
   return (
-    <ul className="flex flex-col gap-2 mt-5 ml-[15%] mr-[15%] mb-5">
+    <ul>
         <Item name={item1.name} quantity={item1.quantity} category={item1.category} />
         <Item name={item2.name} quantity={item2.quantity} category={item2.category} />
         <Item name={item3.name} quantity={item3.quantity} category={item3.category} />
