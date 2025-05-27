@@ -1,9 +1,9 @@
-export default function Item({ name, quantity, category }) {
+export default function Item({ props }) {
   return (
     <li className=" bg-darkblue">
-      <h2 className="text-sm text-white">Name: {name}</h2>
-      <p className="text-sm text-white">Quantity: {quantity}</p>
-      <p className="text-sm text-white">Category: {category}</p>
+      <h2 className="text-sm text-white">Name: {props.name}</h2>
+      <p className="text-sm text-white">Quantity: {props.quantity}</p>
+      <p className="text-sm text-white">Category: {props.category}</p>
     </li>
   );
 }
