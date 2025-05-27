@@ -1,4 +1,4 @@
-export default function Item({ props }) {
+export default function Item(props) {
   return (
     <li className=" bg-darkblue">
       <h2 className="text-sm text-white">Name: {props.name}</h2>
