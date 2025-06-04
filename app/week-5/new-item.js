@@ -2,8 +2,13 @@
 import { useState } from "react";
 
 export default function NewItem() {
-  const [quantity, setQuantity] = useState(1);
 
+  // State variables for quantity, name, and category
+  const [quantity, setQuantity] = useState(1);
+  const [name, setName] = useState("");
+  const[category, setCategory] = useState("produce");
+
+  // Function to increment the quantity
   const increment = () => {
     let currentQuantity = quantity.valueOf();
     if (currentQuantity < 20) {
@@ -11,6 +16,7 @@ export default function NewItem() {
     }
   };
 
+  // Function to decrement the quantity
   const decrement = () => {
     let currentQuantity = quantity.valueOf();
     if (currentQuantity > 1) {
@@ -18,10 +24,12 @@ export default function NewItem() {
     }
   };
 
+  // Base button style
   let baseButtonStyle = "w-8 rounded text-white";
   const isIncrementDisabled = quantity === 20;
   const isDecrementDisabled = quantity === 1;
 
+  // Function to get the button style based on whether it is disabled
   const GetButtonStyle = (isDisabled) => {
     if (isDisabled) {
       return `${baseButtonStyle} bg-gray-400`;
