@@ -8,6 +8,7 @@ export default function Page() {
         <li> <Link href="/week-2" className="text-lg ml-[15%] hover:text-red-400 hover:underline" > Week 2 Assignment</Link></li>
         <li><Link href="/week-3" className="text-lg ml-[15%] hover:text-red-400 hover:underline" > Week 3 Assignment</Link></li>
         <li><Link href="/week-4" className="text-lg ml-[15%] hover:text-red-400 hover:underline" > Week 4 Assignment</Link></li>
+        <li><Link href="/week-5" className="text-lg ml-[15%] hover:text-red-400 hover:underline" > Week 5 Assignment</Link></li>
       </ul>
     </main>
   );
