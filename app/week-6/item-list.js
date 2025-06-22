@@ -57,21 +57,21 @@ export default function ItemList() {
       <div className="mb-4">
         <label className="font-bold ml-3 text-sky-100 text-2xl ">Sort By: </label>
         <button
-          className="bg-amber-600 p-2 rounded-3xl ml-2"
+          className="bg-amber-600 p-2 rounded-3xl ml-2 cursor-pointer"
           value="name"
           onClick={handleSortByChange}
         >
           Name
         </button>
         <button
-          className="bg-amber-600 p-2 rounded-3xl ml-2"
+          className="bg-amber-600 p-2 rounded-3xl ml-2 cursor-pointer" 
           value="category"
           onClick={handleSortByChange}
         >
           Category
         </button>
         <button
-          className="bg-amber-600 p-2 rounded-3xl ml-2"
+          className="bg-amber-600 p-2 rounded-3xl ml-2 cursor-pointer"
           value="group"
           onClick={handleSortByChange}
         >
