@@ -1,16 +1,14 @@
 "use client";
 import { useState } from "react";
 import Item from "./item";
-import itemData from "./items.json";
 
-export default function ItemList() {
-  let itemArray = itemData.map((item) => ({ ...item }));
+export default function ItemList({items}) {
 
   const handleSortByChange = (event) => setSortBy(event.target.value);
   const [sortBy, setSortBy] = useState("name");
 
   if (sortBy === "name" || sortBy === "category") {
-    itemArray.sort((a, b) => {
+    items.sort((a, b) => {
       let nameA = a[sortBy].toUpperCase();
       let nameB = b[sortBy].toUpperCase();
       if (nameA < nameB) return -1;
@@ -22,7 +20,7 @@ export default function ItemList() {
   let grouped = {};
   let sortedCategoryKeys = [];
   if (sortBy === "group") {
-    grouped = itemArray.reduce((acc, item) => {
+    grouped = items.reduce((acc, item) => {
       const group = item.category;
       if (!acc[group]) {
         acc[group] = [];
@@ -98,7 +96,7 @@ export default function ItemList() {
       ) : (
         <div>
           <ul>
-            {itemArray.map((item) => (
+            {items.map((item) => (
               <Item
                 key={item.id}
                 name={item.name}

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function NewItem() {
+export default function NewItem({onAddItem}) {
   // Form Control States
   const [quantity, setQuantity] = useState(1);
   const [name, setName] = useState("");
@@ -31,18 +31,21 @@ export default function NewItem() {
   const handleSubmit = (event) => {
     event.preventDefault();
     let item = {
-      itemName: name,
-      itemCategory: category,
-      itemQuantity: quantity,
+      id: Math.random().toString(36).substring(2, 9),
+      name,
+      category,
+      quantity,
     };
     console.log(item);
     alert(
       `
-      Name: ${item.itemName}
-      Category: ${item.itemCategory}  
-      Quantity: ${item.itemQuantity}
+      ID: ${item.id}
+      Name: ${item.name}
+      Category: ${item.category}  
+      Quantity: ${item.quantity}
       `
     );
+    onAddItem(item);
 
     setName("");
     setCategory("produce");
@@ -106,17 +109,17 @@ export default function NewItem() {
           onChange={handleCategoryChange}
           required
         >
-          <option value="Produce">Produce</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Bakery">Bakery</option>
-          <option value="Meat">Meat</option>
-          <option value="Frozen Foods">Frozen Foods</option>
-          <option value="Canned Goods">Canned Goods</option>
-          <option value="Dry Goods">Dry Goods</option>
-          <option value="Beverages">Beverages</option>
-          <option value="Snacks">Snacks</option>
-          <option value="Household">Household</option>
-          <option value="Other">Other</option>
+          <option value="produce">Produce</option>
+          <option value="dairy">Dairy</option>
+          <option value="bakery">Bakery</option>
+          <option value="meat">Meat</option>
+          <option value="frozen Foods">Frozen Foods</option>
+          <option value="canned Goods">Canned Goods</option>
+          <option value="dry Goods">Dry Goods</option>
+          <option value="beverages">Beverages</option>
+          <option value="snacks">Snacks</option>
+          <option value="household">Household</option>
+          <option value="other">Other</option>
         </select>
       </div>
       <div className="w-full">
