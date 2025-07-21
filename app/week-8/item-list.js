@@ -59,7 +59,7 @@ export default function ItemList({items,onItemSelect}) {
   return (
     <div >
       <div className="mb-4">
-        <label className="font-bold ml-3 text-sky-100 text-2xl ">Sort By: </label>
+        <label className="font-bold ml-3 text-slate-100 text-2xl ">Sort By: </label>
         <button
           className="bg-amber-600 p-2 rounded-3xl ml-2 cursor-pointer"
           value="name"

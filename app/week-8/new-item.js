@@ -62,20 +62,20 @@ export default function NewItem({onAddItem}) {
     if (isDisabled) {
       return `${baseButtonStyle} bg-gray-400`;
     } else {
-      return `${baseButtonStyle} bg-blue-600 hover:bg-blue-800 cursor-pointer`;
+      return `${baseButtonStyle} bg-blue-900 hover:bg-blue-950 cursor-pointer`;
     }
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-2 m-2 bg-blue-100 max-w-sm w-full rounded"
+      className="p-2 m-2 bg-sky-100 max-w-sm w-full rounded mb-2 p-4"
     >
       <div className="mb-2">
         <input
           type="text"
           placeholder="Item name"
-          className="p-1 w-full text-black border-2 border-blue-600 rounded"
+          className="p-1 w-full text-blue-950 border-2 border-blue-950 rounded"
           onChange={handleNameChange}
           value={name}
           required
@@ -83,8 +83,8 @@ export default function NewItem({onAddItem}) {
       </div>
       <div className="flex justify-between mb-2">
         <div>
-          <div className="flex justify-between bg-white w-35 rounded p-2 border-2 border-blue-600">
-            <span className="text-black">{quantity}</span>
+          <div className="flex justify-between bg-white w-35 rounded p-2 border-2 border-blue-950">
+            <span className="text-blue-950">{quantity}</span>
             <div className="flex gap-2">
               <button
                 disabled={isDecrementDisabled}
@@ -104,7 +104,7 @@ export default function NewItem({onAddItem}) {
           </div>
         </div>
         <select
-          className="px-2 py-1 rounded text-black border-2 border-blue-600 bg-white"
+          className="px-2 py-1 rounded text-blue-950 border-2 border-blue-950 bg-white"
           value={category}
           onChange={handleCategoryChange}
           required
@@ -123,7 +123,7 @@ export default function NewItem({onAddItem}) {
         </select>
       </div>
       <div className="w-full">
-        <button className="p-2 w-full rounded bg-blue-600">Summit</button>
+        <button className="p-2 w-full rounded bg-blue-900">Submit</button>
       </div>
     </form>
   );
