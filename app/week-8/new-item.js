@@ -69,7 +69,7 @@ export default function NewItem({onAddItem}) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-2 m-2 bg-sky-100 max-w-sm w-full rounded mb-2 p-4"
+      className="p-2 m-2 bg-sky-100 max-w-sm w-full rounded mb-2"
     >
       <div className="mb-2">
         <input
