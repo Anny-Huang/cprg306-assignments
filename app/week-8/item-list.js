@@ -2,10 +2,16 @@
 import { useState } from "react";
 import Item from "./item";
 
-export default function ItemList({items}) {
+export default function ItemList({items,onItemSelect}) {
 
   const handleSortByChange = (event) => setSortBy(event.target.value);
   const [sortBy, setSortBy] = useState("name");
+
+  const handleItemClick = (itemName) => {
+    if (onItemSelect) {
+      onItemSelect(itemName);
+    }
+  };
 
   if (sortBy === "name" || sortBy === "category") {
     items.sort((a, b) => {
@@ -102,6 +108,7 @@ export default function ItemList({items}) {
                 name={item.name}
                 quantity={item.quantity}
                 category={item.category}
+                onSelect={() => handleItemClick(item.name.replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '').split(',')[0])}
               />
             ))}
           </ul>
