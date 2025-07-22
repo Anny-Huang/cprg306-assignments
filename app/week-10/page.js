@@ -42,7 +42,7 @@ export default function SignInPage() {
             Sign Out
           </button>
           <p className="text-xl hover:underline">
-            <Link href="/week-9/shopping-list/">
+            <Link href="/week-10/shopping-list/">
               Continue to your Shopping List
             </Link>
           </p>

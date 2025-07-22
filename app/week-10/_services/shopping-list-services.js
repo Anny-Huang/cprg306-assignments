@@ -23,21 +23,6 @@ export async function getItems(userId) {
     throw error;
   }
 }
-export async function addItem(userId, item) {
-  if (!userId || !item) {
-    throw new Error("userId and item are required to add an item.");
-  }
-
-  const itemsRef = collection(db, "users", userId, "items");
-
-  try {
-    const docRef = await addDoc(itemsRef, item);
-    return { id: docRef.id, ...item };
-  } catch (error) {
-    console.error("Error adding item:", error);
-    throw error;
-  }
-}
 
 export async function addItem(userId, item) {
   if (!userId || !item) {
@@ -54,3 +39,5 @@ export async function addItem(userId, item) {
     throw error;
   }
 }
+
+
