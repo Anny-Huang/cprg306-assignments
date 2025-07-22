@@ -84,6 +84,7 @@ export default function NewItem() {
             <span className="text-black">{quantity}</span>
             <div className="flex gap-2">
               <button
+                type="button"
                 disabled={isDecrementDisabled}
                 className={GetButtonStyle(isDecrementDisabled)}
                 onClick={decrement}
@@ -91,6 +92,7 @@ export default function NewItem() {
                 -
               </button>
               <button
+                type="button"
                 disabled={isIncrementDisabled}
                 className={GetButtonStyle(isIncrementDisabled)}
                 onClick={increment}
